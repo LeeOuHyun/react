@@ -1,0 +1,27 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": ["src/components"],
+    "exclude": ["node_modules", "npm-packages_offline_cache", "public"],
+    "includePattern": "\\.(jsx|js|ts|tsx)$"
+  },
+  "plugins": [
+    "node_modules/better-docs/typescript",
+    "node_modules/better-docs/component"
+  ],
+  "templates": {
+    "better-docs": {
+      "name": "design-platform",
+      "css": "style/prettify-tomorrow-night.css",
+      "head": "<script src=\"scripts/prettify.js\"></script>"
+    }
+  },
+  "opts": {
+    "template": "node_modules/better-docs",
+    "destination": "docs",
+    "recurse": true,
+    "readme": "README.md"
+  }
+}

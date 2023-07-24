@@ -1,0 +1,103 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "prettier"
+  ],
+  "rules": {
+    "linebreak-style": "off",
+    "react-hooks/rules-of-hooks": "error", /* Hooks를 루프 내부, 조건, 중첩 함수 호출 방지 체크, 일반 자바스크립트 함수 방지 호출 체크 */
+    "react-hooks/exhaustive-deps": "warn", /* 후크에 누락된 종속성 체크(useEffect, useMemo 관련)*/
+    "import/no-unresolved": "off", /* import path 설정시 import가 해당 경로를 인식하지 못하나는 에러 - 맨밑 settings와 연결 */
+    "@typescript-eslint/explicit-function-return-type": "off", /*함수의 반환 값(return) 또는 함수의 리턴 타입을 명시적으로 입력한다. off*/
+    "import/no-dynamic-require": "off", /* require 사용 ex)동적으로 정적 이미지 파일을 요구하는 상황 */
+    "global-require": "off",
+    "import/no-extraneous-dependencies": "off", /* package.json의 dependencies, devDependencies, optionalDependencies, peerDependencies또는 에 선언되지 않은 외부 모듈의 가져오기를 금지합니다 */
+    "react/forbid-prop-types": "off", /* prop의 Types(any,object,array) 금지한다 */
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ], /* js, jsx, ts, tsx파일 허용 */
+    "no-use-before-define": "off", /* 정의되기전 변수 사용 금지 */
+    "@typescript-eslint/no-empty-interface": "off", /* 비어있는 interface를 허용하지 않는다 */
+    "@typescript-eslint/no-explicit-any": "off", /* any유형을 허용하지 않는다 */
+    "@typescript-eslint/no-var-requires": "off", /* require를 var형으로 받을 수 없다 */
+    "no-shadow": "off", /* 외부 범위에서 선언된 변수와 같은 이름의 변수를 선언할 수 없다 */
+    "react/prop-types": "off", /* React 구성 요소 정의에서 누락된 소품 유효성 검사를 허용하지 않음 */
+    "no-empty-pattern": "off", /*   "extends": "eslint:recommended" 의 속성이 이 규칙으 활성화 */
+    "no-alert": "off", /* alert,confirm 사용금지 */
+    "react/function-component-definition": "off", /* function 생성에 대한 정의 ex)const a = function(){} or const a = () => 등 가능함수들 나열*/
+    "react/jsx-no-bind": "warn", /*JSX에서 .bind()및 arrow function을 허용하지 않음( 화살표 함수등 바인드리액트 성능에 부정적인 영향을 미칠 수 도 있음 )*/
+    "no-unused-vars": "warn", /* 사용하지 않는 변수를 허용하지 않음 */
+    "prettier/prettier": "warn",
+    "no-underscore-dangle": "off", /* 변수 이름에 underscore 허용안함*/
+    "no-param-reassign": "off", /* 매개변수 재할당 없음 ex) function foo(barVar) { barVar.prop = "value"; } 안됌 */
+    "imort/no-anonymous-default-export": "off", /* 가져오기 / 익명 내보내기 없음*/
+    "react/require-default-props": "off" /* default prop 정의한다. */,
+    /*
+    추가
+    no-console - 콘솔 사용
+    import/extensions - js ~ tsx 파일 확장자는 확장자 안써도 됌
+     "react/jsx-uses-react"- tsx파일안에 import React 제외 
+    "react/react-in-jsx-scope" - tsx파일안에 import React 제외 
+    */
+    "no-console": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ],
+        "moduleDirectory": [
+          "node_modules",
+          "@types"
+        ]
+      }
+    }
+  }
+}
